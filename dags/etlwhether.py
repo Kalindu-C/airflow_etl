@@ -22,7 +22,7 @@ default_args={
 ## DAG
 with DAG(dag_id='weather_etl_pipeline',
          default_args=default_args,
-         schedule_interval='@daily',
+         schedule=timedelta(days=1),
          catchup=False) as dags:
     
     @task()
